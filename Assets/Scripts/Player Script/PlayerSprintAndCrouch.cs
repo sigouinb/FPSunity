@@ -28,6 +28,7 @@ public class PlayerSprintAndCrouch : MonoBehaviour
     void Update()
     {
         Sprint();
+        Crouch();
     }
 
     void Sprint() {
@@ -51,7 +52,7 @@ public class PlayerSprintAndCrouch : MonoBehaviour
 
 
             } else {
-                // if we are not crouching - stand up
+                // if we are not crouching - crouch
                 look_Root.localPosition = new Vector3(0f, crouch_Height, 0f);
                 playerMovement.speed = crouch_Speed;
 
