@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TagHolders;
+using EnemyCtrl;
+
 
 namespace WeaponsList 
 {
@@ -41,17 +43,20 @@ public class WeaponHandler : MonoBehaviour
         anim.SetTrigger(AnimationTags.SHOOT_TRIGGER);
     }
 
-    public void Aim(bool canAim) {
-        anim.SetBool(AnimationTags.AIM_PARAMETER, canAim);
-    }
 
-    void Turn_On_MuzzleFlash() {
-        muzzleFlash.SetActive(true);
-    }
 
-    void Turn_Off_MuzzleFlash() {
-        muzzleFlash.SetActive(false);
-    }
+ 
+
+
+    // void Turn_On_AttackPoint() {
+        // attack_Point.SetActive(true);
+    // }
+
+    // void Turn_Off_AttackPoint() {
+        // if(attack_Point.activeInHierarchy) {
+            // attack_Point.SetActive(false);
+        // }
+    // }
 
     
 

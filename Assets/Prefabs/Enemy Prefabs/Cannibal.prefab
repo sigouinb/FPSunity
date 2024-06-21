@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 844038f37e6bbc443b00d79c30bd0ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
+  damage: 0.8
   radius: 1
   layerMask:
     serializedVersion: 2
@@ -71,15 +71,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 5eb4e4c4d0b3c8f4bb02a762ec01f6b4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 75
+      value: -25.8
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 5eb4e4c4d0b3c8f4bb02a762ec01f6b4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22
+      value: 2.9999955
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 5eb4e4c4d0b3c8f4bb02a762ec01f6b4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 109
+      value: 29.9
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 5eb4e4c4d0b3c8f4bb02a762ec01f6b4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -162,7 +162,7 @@ Rigidbody:
   m_GameObject: {fileID: 6960680086171638644}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -248,8 +248,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walk_Speed: 0.5
-  run_Speed: 4
-  chase_Distance: 7
+  run_Speed: 3
+  chase_Distance: 12
   attack_Distance: 2.2
   chase_After_Attack_Distance: 2
   patrol_Radius_Min: 20

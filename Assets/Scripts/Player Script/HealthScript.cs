@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 using EnemyCtrl;
 using TagHolders;
 using stats;
+using spawns;
 
 namespace Health_Script
 {
@@ -13,6 +15,7 @@ public class HealthScript : MonoBehaviour
     private EnemyAnimator enemy_Anim;
     private NavMeshAgent navAgent;
     private EnemyController enemy_Controller;
+    private AttackScript enemy_Damage; 
 
     public float health = 100f;
 
@@ -66,15 +69,15 @@ public class HealthScript : MonoBehaviour
         if(is_Cannibal) {
             GetComponent<Animator>().enabled = false;
             GetComponent<BoxCollider>().isTrigger = false;
-            GetComponent<Rigidbody>().AddTorque(-transform.forward * 50f);
+            GetComponent<Rigidbody>().AddTorque(-transform.forward * 5000f);
 
             enemy_Controller.enabled = false;
             navAgent.enabled = false;
             enemy_Anim.enabled = false;
-
-            // StartCoroutine
+            
 
             // EnemyManager spawn more enemies
+            //EnemyManager.instance.EnemyDied(true);
         }
 
         if(is_Player) {
@@ -85,11 +88,11 @@ public class HealthScript : MonoBehaviour
             }
 
             // call enemy manager to stop spawning enemies
+            //EnemyManager.instance.StopSpawning();
 
             GetComponent<PlayerMovement>().enabled = false;
             GetComponent<PlayerAttack>().enabled = false;
             GetComponent<WeaponManager>().GetCurrentSelectedWeapon().gameObject.SetActive(false);
-            print("ded");
         }
 
         if(tag == Tags.PLAYER_TAG) {
@@ -100,7 +103,7 @@ public class HealthScript : MonoBehaviour
     } // player died
 
     void RestartGame() {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void TurnOffGameObject() {
